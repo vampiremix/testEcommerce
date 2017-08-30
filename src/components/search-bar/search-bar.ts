@@ -11,16 +11,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: 'search-bar.html'
 })
 export class SearchBarComponent {
-  searchQuery: string = '';
+  searchQuery: string = ' ';
   @Input() items: any;
   filterdata: any;
-  @Output() dataFiltered = new EventEmitter<any>();
+  @Output() dataFiltered: EventEmitter<any> = new EventEmitter<any>();
   text: string;
   constructor() {
     console.log('Hello SearchBarComponent Component');
     this.text = 'Hello World';
-    this.initializeItems();
-    this.getItems('');
+    // this.initializeItems();
+    // this.getItems(this.searchQuery);
   }
   initializeItems() {
     this.filterdata = this.items;
@@ -40,7 +40,7 @@ export class SearchBarComponent {
 
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
-    } this.dataFiltered.emit(this.filterdata || this.items);
-    console.log(this.filterdata);
+    } this.dataFiltered.emit(this.filterdata);
+    console.log("send filter : " + this.filterdata);
   }
 }

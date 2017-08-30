@@ -1,3 +1,4 @@
+import { clamp } from 'ionic-angular/util';
 import { SearchModel } from './search.model';
 import { SearchService } from './search.service';
 import { Component } from '@angular/core';
@@ -23,13 +24,16 @@ export class SearchPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
 
+
     this.searchSV.getData().then((data) => {
       console.log("Data Search : " + data);
       this.products.items = data.items;
+      this.showProducts.items = this.products.items;
     }).catch((err) => { console.log("Search Data Err : " + err); })
   }
-  testfn($event) {
-    this.showProducts = $event;
+  filter($event) {
+    this.showProducts.items = $event;
+    console.log("TES : " + $event);
   }
 
 }

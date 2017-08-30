@@ -1,3 +1,4 @@
+import { ProfileService } from '../pages/profile/profile.service';
 import { ListItemCartComponent } from '../components/list-item-cart/list-item-cart';
 import { TopbarComponent } from '../components/topbar/topbar';
 import { ListItemsComponent } from '../components/list-items/list-items';
@@ -73,6 +74,7 @@ import { TestComponent } from '../components/test/test';
 import { CartService } from "../pages/cart/cart.service";
 import { SearchBarComponent } from '../components/search-bar/search-bar';
 import { SearchService } from "../pages/search/search.service";
+import { ProfileCardComponent } from '../components/profile-card/profile-card';
 
 
 export function createTranslateLoader(http: Http) {
@@ -108,7 +110,8 @@ export function createTranslateLoader(http: Http) {
     ListItemsComponent,
     TopbarComponent,
     SearchBarComponent,
-    ListItemCartComponent
+    ListItemCartComponent,
+    ProfileCardComponent
   ],
   imports: [
     BrowserModule,
@@ -158,7 +161,8 @@ export function createTranslateLoader(http: Http) {
     ImagePicker,
     Crop,
     EmailComposer,
-    SearchService
+    SearchService,
+    ProfileService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

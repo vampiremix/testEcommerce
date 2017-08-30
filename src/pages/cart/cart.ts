@@ -21,16 +21,14 @@ import { counterRangeValidator } from '../../components/counter-input/counter-in
 export class CartPage {
   loading: any;
   cart: CartModel = new CartModel();
-  counterForm: any;
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public cartService: CartService,
     public loadingCtrl: LoadingController
   ) {
     this.loading = loadingCtrl.create();
-    this.counterForm = new FormGroup({
-      counter: new FormControl()
-    });
+
   }
 
   ionViewDidLoad() {

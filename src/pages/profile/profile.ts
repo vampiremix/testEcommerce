@@ -1,3 +1,5 @@
+import { profileModel } from './profile.model';
+import { ProfileService } from './profile.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -13,12 +15,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  profileData: profileModel = new profileModel();
+  constructor(public navCtrl: NavController, public navParams: NavParams, public profileSV: ProfileService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+
+    this.profileSV.getData().then((data) => {
+      this.profileData = data;
+      console.log(this.profileData);
+    }).catch((err) => {
+      console.log(err);
+    })
   }
 
 }

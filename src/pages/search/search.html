@@ -9,10 +9,10 @@
   <ion-navbar>
     <ion-title>{{'SEARCH' | translate}}</ion-title>
   </ion-navbar>
-  <search-bar [items]="products.items" (dataFiltered)="testfn($event)"></search-bar>
+  <search-bar [items]="products.items" (dataFiltered)="filter($event)"></search-bar>
 </ion-header>
 
 
 <ion-content padding>
-  <list-items [items]="showProducts"></list-items>
+  <list-items [items]="showProducts.items"></list-items>
 </ion-content>
