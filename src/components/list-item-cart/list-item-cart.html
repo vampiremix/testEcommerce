@@ -1,31 +1,15 @@
 <ion-list>
-  <!-- <ion-item *ngFor="let item of items"> -->
-
-  <!-- <ion-list  fixBottom> -->
   <ion-item *ngFor="let item of items">
 
     <!-- <ion-avatar item-start no-padding> -->
     <img [src]="item.product.image" imgSize item-start>
     <ion-label>
-      <div>{{item.product.name}}</div>
-      <div>Price : {{item.product.price}}</div>
+      <h2>{{item.product.name}}</h2>
+      <p>Price : {{item.product.price}}</p>
     </ion-label>
     <div item-content>
-      <counter-input ></counter-input>
+      <counter-input></counter-input>
     </div>
-    <!-- </ion-avatar> -->
-    <!-- <ion-col col-5> -->
-    <!-- <div><span> -->
-
-    <!-- </span></div> -->
-    <!-- <div></div> -->
-    <!-- </ion-col> -->
-
-    <!-- <span class="counter-label"></span> -->
-    <!-- <div><span class="counter-label">Price : {{item.product.price}}</span></div> -->
-
-
-
   </ion-item>
 </ion-list>
 

@@ -13,6 +13,9 @@
 </ion-header>
 
 
-<ion-content padding>
 
+<ion-content class="contact-card-content">
+  <topbar [dataTopBar]="shop"></topbar>
+  <shop-show-detail [shop]="shopDetail.shop"></shop-show-detail>
+  <!-- <data-scroll-x *ngIf="shop.products && shop.products.length > 0" [dataListX]="shop.products"></data-scroll-x> -->
 </ion-content>

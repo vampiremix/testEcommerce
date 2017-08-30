@@ -1,3 +1,5 @@
+import { ShopDetailModel } from './shop-detail.model';
+import { ShopDetailService } from './shop-detail.service';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -12,13 +14,20 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'shop-detail.html',
 })
 export class ShopDetailPage {
-  private shop:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.shop = navParams.get('title');
+  private shop: any;
+  public shopDetail: ShopDetailModel = new ShopDetailModel();
+  constructor(public navCtrl: NavController, public navParams: NavParams, public shopDetailSV: ShopDetailService) {
+    this.shop = navParams.get('shop');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ShopDetailPage');
+    this.shopDetailSV.getData().then((data) => {
+      this.shopDetail.shop = data.shop;
+      console.log(data);
+    }).catch((err) => {
+      console.log(err);
+    })
   }
 
 }

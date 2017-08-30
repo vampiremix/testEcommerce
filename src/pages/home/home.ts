@@ -21,11 +21,11 @@ export class HomePage {
   //images: Array<string> = [];
   home: HomeModel = new HomeModel();
   loading: any;
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public homeService: HomeService,
     public loadingCtrl: LoadingController
   ) {
-    
+
     this.loading = this.loadingCtrl.create();
   }
 
@@ -40,15 +40,15 @@ export class HomePage {
       });
   }
 
-  selectedItem(e){
+  selectedItem(e) {
     this.navCtrl.push(ProductDetailPage, e);
   }
 
-  selectedShop(e){
-    this.navCtrl.push(ShopDetailPage, e);
+  selectedShop(e) {
+    this.navCtrl.push(ShopDetailPage, { shop: e });
   }
 
-  xxxx(e){
+  xxxx(e) {
     alert(e);
   }
 
